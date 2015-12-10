@@ -1,4 +1,5 @@
-/** Implement atoi to convert a string to an integer.
+/** 
+Implement atoi to convert a string to an integer.
 
  * @param {string} str
  * @return {number}

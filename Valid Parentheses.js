@@ -7,35 +7,14 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
  * @return {boolean}
  */
 var isValid = function(s) {
-    if (s === null) {
-        return false;
-    }
-    var stack = [],
-        sets = {'(':')', '{':'}', '[':']'},
-        len = s.length,
-        cur,
-        stackTop,
-        i;
+    var length;
 
-    for (i = 0; i < len; i++) {
-        cur = s.charAt(i);
-        if (sets.hasOwnProperty(cur)) {
-            stack.push(cur);
-        } else {
-            if (stack.length === 0) {
-                return false;
-            } else {
-                stackTop = stack.pop();
-                if (sets[stackTop] !== cur) {
-                    return false;
-                }
-            }
-        }
-    }
-    if (stack.length === 0) {
-        return true;
-    } else {
-        return false;
-    }
-    
+    do {
+        length = s.length;
+        s = s.replace("()", "").replace("{}", "").replace("[]", "");
+    } while(length != s.length);
+
+    return s.length === 0;
+
 };
+
