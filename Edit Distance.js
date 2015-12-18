@@ -42,3 +42,5 @@ var minDistance = function(word1, word2) {
     }
     return matrix[len1][len2];
 };
+
+
